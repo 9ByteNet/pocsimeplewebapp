@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4682b4;
+        }
+    </style>
+    <script>
+        function displayDateTime() {
+            const now = new Date();
+            const utcDate = now.toUTCString();
+            document.getElementById('datetime').innerText = `Current Date and Time (UTC): ${utcDate}`;
+        }
+
+        function displayUser() {
+            const user = navigator.userAgent;
+            document.getElementById('user').innerText = `Current User Log-on: ${user}`;
+        }
+
+        function displayHostName() {
+            const hostname = window.location.hostname;
+            document.getElementById('hostname').innerText = `Current Machine Host Name: ${hostname}`;
+        }
+
+        window.onload = function() {
+            displayDateTime();
+            displayUser();
+            displayHostName();
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Page!</h1>
+    <p id="datetime"></p>
+    <p id="user"></p>
+    <p id="hostname"></p>
+</body>
+</html>
